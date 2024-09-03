@@ -1,0 +1,25 @@
+create or replace procedure my_pro_with_handler()
+    -> begin
+    -> declare name varchar(20);
+    -> declare stop bool default 0;
+    -> declare my_cur cursor for select firstname from employees;
+    -> declare continue handler for not found
+    -> begin
+    -> set stop = 1;
+    -> select 'i got error';
+    -> close my_cur;
+    -> end;
+    -> open my_cur;
+    -> my_loop:loop
+    -> if stop then
+    -> leave my_loop;
+    -> else
+    -> fetch my_cur into name;
+    -> select name;
+    -> end if;
+    -> end loop;
+    -> select 'end of procedure';
+    -> end$
+
+
+call my_pro_with_handler()$
