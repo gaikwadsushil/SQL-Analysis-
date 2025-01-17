@@ -27,7 +27,7 @@ A **SQL Analysis** project designed to facilitate robust data manipulation and a
 
 ## 🛠️ Technologies Used
 
-- **Databases**: SQL-compatible databases (e.g., MySQL, PostgreSQL, SQLite) 🗄️  
+- **Databases**: SQL-compatible databases ( MySQL) 🗄️  
 - **Programming Language**: SQL (Structured Query Language) 📜
 
 ---
